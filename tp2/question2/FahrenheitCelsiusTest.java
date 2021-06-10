@@ -69,4 +69,26 @@ public class FahrenheitCelsiusTest extends junit.framework.TestCase
      * Vous pouvez ébaucher le corps grâce au menu contextuel "Enregistrer une méthode de test".
      */
 
+  public void test_fahrenheitEnCelsius() {
+        assertEquals("    0 °F -> -17.7 °C ? ", -17.7, question2.FahrenheitCelsius.fahrenheitEnCelsius(0), 0.1);
+        assertEquals("  100 °F -> 37.7 °C ? ", 37.7, question2.FahrenheitCelsius.fahrenheitEnCelsius(100), 0.1);
+        assertEquals(" 2000 °F -> 1093.3 °C ?", 1093.3, question2.FahrenheitCelsius.fahrenheitEnCelsius(2000), 0.1);
+        assertEquals("   54 °F -> 12.2 °C ?", 12.2, question2.FahrenheitCelsius.fahrenheitEnCelsius(54), 0.1);
+    }
+     //  test pour les entiers négatifs
+    public void test_fahrenheitEnCelsiusNegatif() {
+        assertEquals("    -450°F -> -267.7°C ? ", -267.7, question1.FahrenheitCelsius.fahrenheitEnCelsius(-450), 0.1);
+        assertEquals("    -200°F -> -128.8°C ? ", -128.8, question1.FahrenheitCelsius.fahrenheitEnCelsius(-200), 0.1);
+    }
+    
+    //  test pour les grands entiers  
+    public void test_fahrenheitEnCelsiusEntier() {
+        assertEquals("   1546231°F -> 858999.5°C ? ", 858999.5, question1.FahrenheitCelsius.fahrenheitEnCelsius(1546231), 0.1);
+        assertEquals("    2154369°F -> 1196854.0°C ? ", 1196854.0, question1.FahrenheitCelsius.fahrenheitEnCelsius(2154369), 0.1);
+    }
+
+
+    
 }
+
+

@@ -15,13 +15,23 @@ public class FahrenheitCelsius{
       *  @param args ...
       */
      public static void main(String[] args){
-       try{
-       
+        
+            int fahrenheit = 0; //initialiser Fahrenheit valeur
+            float celsius = 0; //initialiser celsius valeur
+        try{
+            for(int x=0;x<args.length;x++) // vérifier la valeur respect le condition (pas null et il a des valeurs)
+            { 
+                    fahrenheit = Integer.parseInt(args[x]); // convert valeur to integer
+                    celsius=fahrenheitEnCelsius(Integer.parseInt(args[x])); // appel de la fonction fahrenheitEnCelsius(int f)
+                    System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // affiche le résultat obtenue                                                           // format
+                }                                                                     // imposés
+            }
+       // appel de la fonction fahrenheitEnCelsius(int f)
       
-       }catch(NumberFormatException nfe){
+       catch(NumberFormatException nfe){
            System.out.println("error : " + nfe.getMessage());  // en cas d'erreur 
        }
-       
+    
      }
      
      /** 
@@ -29,10 +39,13 @@ public class FahrenheitCelsius{
       *   @param f la valeur en degré Fahrenheit
       *   @return  la conversion en degré Celsius
       */
-     public static float fahrenheitEnCelsius( int f){
-       // ...
-       return 0.F;	// à compléter	en remplaçant la valeur retournée par la fonction de conversion
-       // ...
+    
+public static float fahrenheitEnCelsius( int f)
+      {
+         float celsius=5/9f * (f-32);
+                 float resultat=(int)(celsius*10)/10.0f;
+        return resultat;
      }
 
 }
+
